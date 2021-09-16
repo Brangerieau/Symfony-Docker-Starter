@@ -10,9 +10,8 @@ git clone https://github.com/Brangerieau/Symfony-Docker-Starter.git
 docker-compose up -d
 # First launch
 docker exec -it php_docker_symfony bash
-./install.sh
+make create_project
 ```
-- Delete the install.sh file 
 - Delete the .git folder
 
 ✍️ Authors
