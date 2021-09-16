@@ -3,20 +3,6 @@ networks:
 
 services:
 
-    nginx:
-        image: nginx:stable-alpine
-        container_name: nginx_docker_symfony
-        ports:
-            - "8000:80"
-        volumes:
-            - ./:/var/www
-            - ./.tools/docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-        depends_on:
-            - php
-            - mysql
-        networks:
-            - symfony_network
-
     php:
         build:
             context: .

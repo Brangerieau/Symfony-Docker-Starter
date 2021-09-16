@@ -17,10 +17,15 @@ create_project:  ## create Symfony project
 	sed -i 's/mysql:\/\/db_user:db_password@127.0.0.1:3306\/db_name?serverVersion=5.7/mysql:\/\/root:secret@mysql_docker_symfony\/symfony_app?serverVersion=8.0/g' .env
 	cp .env .env.local
 	make create_database
+	make server
 	
 .PHONY: migrate
 migrate: vendor/autoload.php ## Migrate the database
 	$(sy) doctrine:migrations:migrate -q
+
+.PHONY: server
+server: ## Migrate the database
+	symfony serve -d
 
 .PHONY: create_database
 create_database:
