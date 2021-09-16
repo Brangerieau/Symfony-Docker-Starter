@@ -12,7 +12,6 @@ docker-compose up -d
 docker exec -it php_docker_symfony bash
 make create_project
 ```
-- Delete the .git folder
 
 ✍️ Authors
 ---------
