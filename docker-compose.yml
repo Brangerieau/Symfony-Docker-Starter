@@ -55,3 +55,11 @@ services:
             - mysql
         networks:
             - symfony_network
+    mail:
+        image: mailhog/mailhog
+        container_name: mail_docker_symfony
+        ports:
+            - 8025:8025
+            - 1025:1025
+        networks:
+            - symfony_network
